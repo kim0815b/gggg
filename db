@@ -1,0 +1,34 @@
+CREATE TABLE users(
+	"userID"	NUMBER(30)	PRIMARY KEY,
+	"password"	varchar2(50)NOT NULL,
+	"email"		varchar2(50)UNIQUE,
+	"username"	varchar2(30)NOT NULL,
+	"nickname"	varchar2(50)NOT NULL,
+	"image_url" varchar2(100),
+	"introduction" varchar2(300),
+	"grade"		varchar2(5)	NOT NULL,
+	"createdDATE"	DATE
+);
+
+CREATE TABLE schedule(
+	"userID"	NUMBER(30)		NOT NULL,
+	"title"		varchar2(50)	NOT NULL,
+	"content"	varchar2(100),	
+	"start"		DATE	NOT NULL,
+	"end"		DATE,
+);
+
+CREATE TABLE groups(
+	"groupID"	varchar2(30)	PRIMARY KEY,
+	"accessibility" varchar2(30) NOT NULL,
+	"name"		varchar2(30)	NOT NULL,
+	"image_url" varchar2(100)
+);
+
+CREATE TABLE groups_member(
+	"groupID"	NUMBER(30)	NOT NULL,
+	"leaderID"	NUMBER(30)	NOT NULL,
+	"userID"	NUMBER(30)	NOT NULL
+);
+
+
